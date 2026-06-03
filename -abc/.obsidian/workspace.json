@@ -1,0 +1,214 @@
+{
+  "main": {
+    "id": "a6091297dc96b8ec",
+    "type": "split",
+    "children": [
+      {
+        "id": "f51c94d0fa1fe93d",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "a11f876d1117d240",
+            "type": "leaf",
+            "state": {
+              "type": "kanban",
+              "state": {
+                "file": "Untitled Kanban.md",
+                "kanbanViewState": {
+                  "kanban-plugin": "board",
+                  "list-collapse": [
+                    false,
+                    false,
+                    false,
+                    false
+                  ]
+                }
+              },
+              "icon": "lucide-trello",
+              "title": "Untitled Kanban"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "eaddfb6ec6f88157",
+    "type": "split",
+    "children": [
+      {
+        "id": "149659966b776ccd",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "d4bf5240e5da37fc",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
+            }
+          },
+          {
+            "id": "b38c1454a34812a0",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
+          },
+          {
+            "id": "18ff3c4c6af2c38b",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 348.5
+  },
+  "right": {
+    "id": "8c36f5dd2bf86a06",
+    "type": "split",
+    "children": [
+      {
+        "id": "4cdec2c09f12cde5",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "d9ba3486dc8dcf6c",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "Welcome.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks for Welcome"
+            }
+          },
+          {
+            "id": "34a80a8e99ab7750",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "Welcome.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links from Welcome"
+            }
+          },
+          {
+            "id": "b417d76932adcb9e",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "9e918c4bf2356124",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "All properties"
+            }
+          },
+          {
+            "id": "73a2f10edba5e7ca",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "Welcome.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Outline of Welcome"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false,
+      "bases:Create new base": false,
+      "obsidian-kanban:Create new board": false
+    }
+  },
+  "active": "d4bf5240e5da37fc",
+  "lastOpenFiles": [
+    "Scenes/Cloud.gd.uid",
+    "Scenes/Cloud.gd",
+    "Codigos/SpeechRecognizer.gd.uid",
+    "Codigos/SpeechRecognizer.gd",
+    "Codigos/MainScene.gd.uid",
+    "Codigos/MainScene.gd",
+    "Scenes/Scene_1.tscn599050488.tmp",
+    "Scenes/SpeechRecognizer.gd.uid",
+    "Scenes/SpeechRecognizer.gd",
+    "Scenes/Scene_1.tscn520238047.tmp",
+    "Scenes/MainScene.gd.uid",
+    "godot-whisper/samples/godot_whisper/README.md",
+    "Untitled Kanban 2.md",
+    "Untitled Kanban 1.md",
+    "Untitled Kanban.md",
+    "icon.svg",
+    "Welcome.md"
+  ]
+}
