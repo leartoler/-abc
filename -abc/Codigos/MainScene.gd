@@ -1,6 +1,7 @@
 extends Node2D
 
 @onready var recognizer: SpeechRecognizer = $SpeechRecognizer
+@onready var poem_display: PoemDisplay = $PoemLabel
 @onready var clouds: Array = []
 
 func _ready():
@@ -22,5 +23,16 @@ func _ready():
 func _on_progress(progress: float):
 	for cloud in clouds:
 		cloud.update_from_progress(progress)
+		var total = recognizer.POEM_VARIANTS.size()
+		var revealed_count = recognizer.recognized_words.size()
+		
+		for i in range(revealed_count):
+			var word_key = recognizer.POEM_VARIANTS.keys()[i]
+			poem_display.reveal_word(word_key)
+	
+	
+	
+	
+	
 	if progress >= 1.0:
 		print("Poema completo!")

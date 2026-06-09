@@ -8,11 +8,24 @@
 
 config_version=5
 
+[animation]
+
+compatibility/default_parent_skeleton_in_mesh_instance_3d=true
+
 [application]
 
-config/name="-abc"
+config/name="(╯°□°）abc"
+run/main_scene="uid://lpik8pdf776e"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
+
+[audio]
+
+driver/enable_input=true
+
+[display]
+
+window/main_scene="uid://lpik8pdf776e"
 
 [physics]
 
@@ -21,3 +34,20 @@ config/icon="res://icon.svg"
 [rendering]
 
 rendering_device/driver.windows="d3d12"
+
+[xogot]
+
+project/editorState=[{
+"column": 0,
+"current": true,
+"line": 10,
+"path": "res://Codigos/MainScene.gd",
+"type": "file"
+}, {
+"column": 0,
+"line": 0,
+"path": "res://Scenes/Cloud.gd",
+"type": "file"
+}]
+project/breakpoints={}
+project/disabled_breakpoints={}

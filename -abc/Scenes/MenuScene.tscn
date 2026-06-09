@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://cmy2gs5k61ayd"]
+
+[ext_resource type="Texture2D" uid="uid://ds48l72obkuq2" path="res://Imagenes/Pasted image 20260608092820.png" id="1_xx56i"]
+[ext_resource type="Script" uid="uid://o13a7ea8imyu" path="res://Codigos/MenuManager.gd" id="2_rae6p"]
+
+[node name="MenuScene" type="Node2D" unique_id=341158587]
+
+[node name="Fondo" type="ColorRect" parent="." unique_id=1074364624]
+offset_left = -2.0
+offset_right = 1155.0
+offset_bottom = 650.0
+color = Color(0, 0, 0, 1)
+
+[node name="Logo" type="TextureRect" parent="." unique_id=1676056352]
+offset_left = 63.0
+offset_top = -9.0
+offset_right = 2579.0496
+offset_bottom = 1628.0374
+scale = Vector2(0.405, 0.405)
+texture = ExtResource("1_xx56i")
+expand_mode = 3
+
+[node name="MenuManager" type="Node" parent="." unique_id=571967745]
+script = ExtResource("2_rae6p")

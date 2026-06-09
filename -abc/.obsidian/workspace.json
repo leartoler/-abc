@@ -24,6 +24,34 @@
             }
           },
           {
+            "id": "0dbe76d10652f3ac",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Documentos/Documento técnico.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Documento técnico"
+            }
+          },
+          {
+            "id": "1afdc26041c3fec2",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Documentos/Sobre el artista.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Sobre el artista"
+            }
+          },
+          {
             "id": "6d8296251bf3fe73",
             "type": "leaf",
             "state": {
@@ -57,16 +85,16 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Documentos/Documento técnico.md",
+                "file": "(╯°□°）abc.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Documento técnico"
+              "title": "(╯°□°）abc"
             }
           }
         ],
-        "currentTab": 3
+        "currentTab": 5
       }
     ],
     "direction": "vertical"
@@ -239,40 +267,53 @@
       "bases:Create new base": false,
       "obsidian-kanban:Create new board": false,
       "table-editor-obsidian:Advanced Tables Toolbar": false,
-      "zk-prefixer:Create new unique note": false
+      "zk-prefixer:Create new unique note": false,
+      "digitalgarden:Digital Garden Publication Center": false
     }
   },
   "active": "d4bf5240e5da37fc",
   "lastOpenFiles": [
-    "Scenes/Cloud.gd.uid",
-    "Scenes/Cloud.gd",
-    "export_presets.cfg92283469.tmp",
+    "Scenes/MainScene.tscn",
+    "Scenes/MenuScene.tscn",
+    "Scenes/TitleScreen.tscn",
+    "Scenes/Scene_1.tscn",
+    "Scenes",
+    "Ideas/202606080723.md",
+    "project.godot85768334991.tmp",
+    "project.godot85732500175.tmp",
+    "Ideas/202606030623.md",
+    "Ideas/202606030648.md",
+    "Fondo_1.mp4",
+    "Proceso/2026-06-08.md",
+    "Pasted image 20260608102113.png.import",
+    "Pasted image 20260608102113.png",
+    "2026-06-08.md",
+    "Ideas/202606081020.md",
+    "Proceso",
+    "Untitled",
+    "Imagenes/Pasted image 20260608092820.png",
+    "Imagenes/rect1.png",
+    "Documentos/Sobre el artista.md",
+    "(╯°□°）abc.md",
+    "Documentos/Declaración de artista.md",
+    "Imagenes/Pasted image 20260608072551.png",
+    "Documentos/Documento técnico.md",
+    "Imagenes/d.jpg",
+    "Imagenes/c.jpg",
+    "Imagenes/b.jpg",
+    "Imagenes/a.jpg",
+    "Untitled.md",
+    "Home.md",
+    "Clippings/Explore the Beautiful Pages of the 1902 Japanese Design Magazine Shin-Bijutsukai European Modernism Meets Traditional Japanese Design.md",
+    "Clippings/Fonts.md",
+    "Kanban.md",
     "Builds/-abc.apple-touch-icon.png",
     "Builds/-abc.icon.png",
-    "Builds/-abc.png",
-    "Builds/-abc.html91690084.tmp",
-    "Builds/-abc.html",
-    "Builds/-abc.audio.position.worklet.js",
-    "Builds/-abc.audio.worklet.js",
-    "Builds/-abc.wasm",
-    "Builds/-abc.js",
-    "Builds/-abc.pck",
-    "Builds/-abc.pck91409276.tmp",
     "Clippings/Gang of 4 Design Patterns Explained Creational, Structural, and Behavioral.md",
-    "Documentos/Documento técnico.md",
-    "Imágenes/Pasted image 20260603062916.png",
-    "Ideas/202606030623.md",
-    "Imágenes/Pasted image 20260603065213.png",
-    "Imágenes/Pasted image 20260603065111.png",
-    "Imágenes/Pasted image 20260603064953.png",
-    "Ideas/202606030648.md",
-    "Imágenes/Pasted image 20260603062606.png",
-    "Kanban.md",
     "202606030624.md",
     "godot-whisper/samples/godot_whisper/README.md",
     "Untitled Kanban 2.md",
     "Untitled Kanban 1.md",
-    "icon.svg",
     "Welcome.md"
   ]
 }

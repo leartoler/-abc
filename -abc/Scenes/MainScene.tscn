@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://dpktfdco6b7nj"]
+
+[ext_resource type="Script" path="res://Scenes/Scene.gd" id="1_hpc76"]
+[ext_resource type="Texture2D" uid="uid://t7kynvb4hk1t" path="res://Imagenes/rect1.png" id="2_tr2i4"]
+
+[node name="MainScene" type="Node2D" unique_id=462590306]
+script = ExtResource("1_hpc76")
+
+[node name="ColorRect2" type="ColorRect" parent="." unique_id=1587036498]
+offset_left = -21.0
+offset_top = -9.0
+offset_right = 1162.0
+offset_bottom = 660.0
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1828257185]
+visible = false
+offset_right = 1158.0
+offset_bottom = 670.0
+color = Color(0, 0, 0, 1)
+
+[node name="Rect1" type="Sprite2D" parent="." unique_id=595809514]
+position = Vector2(576, 339)
+texture = ExtResource("2_tr2i4")
