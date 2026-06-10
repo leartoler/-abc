@@ -15,7 +15,7 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 [application]
 
 config/name="(╯°□°）abc"
-run/main_scene="uid://lpik8pdf776e"
+run/main_scene="uid://cmy2gs5k61ayd"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 

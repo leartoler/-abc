@@ -3,9 +3,56 @@ extends Node2D
 @onready var recognizer: SpeechRecognizer = $SpeechRecognizer
 @onready var poem_display: PoemDisplay = $PoemLabel
 @onready var clouds: Array = []
+@onready var instruction_label: Label = $InstructionLabel
+
+func mostrar_instruccion(texto: String):
+	instruction_label.text = texto
+
+	var posicion_inicial = instruction_label.position
+
+	instruction_label.visible = true
+	instruction_label.modulate.a = 0.0
+	instruction_label.position = posicion_inicial + Vector2(0, 20)
+
+	var tween = create_tween()
+
+	tween.parallel().tween_property(
+		instruction_label,
+		"modulate:a",
+		1.0,  #de 0 a 1
+		2.0  #tiempo
+	)
+
+	tween.parallel().tween_property(
+		instruction_label,
+		"position",
+		posicion_inicial,
+		1.5 #posición inicial
+	)
+
+	tween.tween_interval(2.0) #tiempo en que permanece quieto
+
+	tween.parallel().tween_property(
+		instruction_label,
+		"modulate:a",
+		0.0,
+		4.0 #tiempo
+	)
+
+	tween.parallel().tween_property(
+		instruction_label,
+		"position",
+		posicion_inicial + Vector2(0, -40),
+		3.0 #tiempo en desaparecer
+	)
+
+
+
 
 
 func _ready():
+	
+	$TextureRect.texture = $SubViewport.get_texture()
 	
 	var overlay = get_tree().root.get_node_or_null("TransitionOverlay")
 
@@ -32,6 +79,8 @@ func _ready():
 
 	recognizer.poem_progress_changed.connect(_on_progress)
 	recognizer.word_recognized.connect(func(w): print("Escuche: ", w))
+	mostrar_instruccion("Recita el poema en voz alta")
+
 
 func _on_progress(progress: float):
 	for cloud in clouds:

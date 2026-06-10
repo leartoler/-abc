@@ -13,6 +13,14 @@ offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("2_n8efl")
 
+[node name="InstructionLabel" type="Label" parent="." unique_id=480105040]
+offset_left = 840.0
+offset_top = 131.0
+offset_right = 952.0
+offset_bottom = 154.0
+text = "Pruebaaaaaaa"
+horizontal_alignment = 1
+
 [node name="Fondo" type="ColorRect" parent="." unique_id=514735733]
 visible = false
 offset_right = 40.0
@@ -29,6 +37,7 @@ offset_bottom = 40.0
 script = ExtResource("3_uda6b")
 
 [node name="Cloud3" type="ColorRect" parent="." unique_id=1846711907]
+visible = false
 offset_right = 1210.0
 offset_bottom = 671.0
 color = Color(0, 0, 0.25882354, 1)

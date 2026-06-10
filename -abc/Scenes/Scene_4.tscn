@@ -1,31 +1,47 @@
 [gd_scene format=3 uid="uid://dqn3580rjasaj"]
 
-[ext_resource type="Script" uid="uid://ce7lmkqd70cr4" path="res://Codigos/MainScene.gd" id="1_ew2ef"]
-[ext_resource type="Script" uid="uid://pw1q6dqj28ho" path="res://Codigos/SpeechRecognizer.gd" id="2_jxi4d"]
-[ext_resource type="Script" uid="uid://dld37icmy7fna" path="res://Codigos/Cloud.gd" id="3_6ywbv"]
+[ext_resource type="Script" uid="uid://ce7lmkqd70cr4" path="res://Codigos/MainScene.gd" id="1_jxi4d"]
+[ext_resource type="Script" uid="uid://b5s6u6qaabium" path="res://Codigos/PoemDisplay.gd" id="2_6ywbv"]
+[ext_resource type="Script" uid="uid://dld37icmy7fna" path="res://Codigos/Cloud.gd" id="3_mj4a8"]
+[ext_resource type="Script" uid="uid://pw1q6dqj28ho" path="res://Codigos/SpeechRecognizer.gd" id="4_lg7e3"]
 
 [node name="MainScene" type="Node2D" unique_id=1018337201]
-script = ExtResource("1_ew2ef")
+script = ExtResource("1_jxi4d")
 
-[node name="ColorRect" type="ColorRect" parent="." unique_id=514735733]
+[node name="PoemLabel" type="RichTextLabel" parent="." unique_id=711046278]
 offset_right = 40.0
 offset_bottom = 40.0
+script = ExtResource("2_6ywbv")
 
-[node name="SpeechRecognizer" type="Node" parent="." unique_id=1939007110]
-script = ExtResource("2_jxi4d")
+[node name="InstructionLabel" type="Label" parent="." unique_id=480105040]
+offset_left = 840.0
+offset_top = 131.0
+offset_right = 952.0
+offset_bottom = 154.0
+text = "Pruebaaaaaaa"
+horizontal_alignment = 1
+
+[node name="Fondo" type="ColorRect" parent="." unique_id=514735733]
+visible = false
+offset_right = 40.0
+offset_bottom = 40.0
 
 [node name="Cloud1" type="ColorRect" parent="." unique_id=1014198632]
 offset_right = 40.0
 offset_bottom = 40.0
-script = ExtResource("3_6ywbv")
+script = ExtResource("3_mj4a8")
 
 [node name="Cloud2" type="ColorRect" parent="." unique_id=32069003]
 offset_right = 40.0
 offset_bottom = 40.0
-script = ExtResource("3_6ywbv")
+script = ExtResource("3_mj4a8")
 
 [node name="Cloud3" type="ColorRect" parent="." unique_id=1846711907]
+visible = false
 offset_right = 1210.0
 offset_bottom = 671.0
 color = Color(0, 0, 0.25882354, 1)
-script = ExtResource("3_6ywbv")
+script = ExtResource("3_mj4a8")
+
+[node name="SpeechRecognizer" type="Node" parent="." unique_id=1939007110]
+script = ExtResource("4_lg7e3")

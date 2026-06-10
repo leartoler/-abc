@@ -1,18 +1,30 @@
 [gd_scene format=3 uid="uid://ckhe62e703uxv"]
 
 [ext_resource type="Script" uid="uid://ce7lmkqd70cr4" path="res://Codigos/MainScene.gd" id="1_de1l3"]
+[ext_resource type="Script" uid="uid://b5s6u6qaabium" path="res://Codigos/PoemDisplay.gd" id="2_82w0d"]
 [ext_resource type="Script" uid="uid://pw1q6dqj28ho" path="res://Codigos/SpeechRecognizer.gd" id="2_terbq"]
 [ext_resource type="Script" uid="uid://dld37icmy7fna" path="res://Codigos/Cloud.gd" id="3_82w0d"]
 
 [node name="MainScene" type="Node2D" unique_id=1018337201]
 script = ExtResource("1_de1l3")
 
-[node name="ColorRect" type="ColorRect" parent="." unique_id=514735733]
+[node name="PoemLabel" type="RichTextLabel" parent="." unique_id=711046278]
 offset_right = 40.0
 offset_bottom = 40.0
+script = ExtResource("2_82w0d")
 
-[node name="SpeechRecognizer" type="Node" parent="." unique_id=1939007110]
-script = ExtResource("2_terbq")
+[node name="InstructionLabel" type="Label" parent="." unique_id=480105040]
+offset_left = 840.0
+offset_top = 131.0
+offset_right = 952.0
+offset_bottom = 154.0
+text = "Pruebaaaaaaa"
+horizontal_alignment = 1
+
+[node name="Fondo" type="ColorRect" parent="." unique_id=514735733]
+visible = false
+offset_right = 40.0
+offset_bottom = 40.0
 
 [node name="Cloud1" type="ColorRect" parent="." unique_id=1014198632]
 offset_right = 40.0
@@ -25,7 +37,11 @@ offset_bottom = 40.0
 script = ExtResource("3_82w0d")
 
 [node name="Cloud3" type="ColorRect" parent="." unique_id=1846711907]
+visible = false
 offset_right = 1210.0
 offset_bottom = 671.0
 color = Color(0, 0, 0.25882354, 1)
 script = ExtResource("3_82w0d")
+
+[node name="SpeechRecognizer" type="Node" parent="." unique_id=1939007110]
+script = ExtResource("2_terbq")
