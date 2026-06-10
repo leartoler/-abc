@@ -4,7 +4,20 @@ extends Node2D
 @onready var poem_display: PoemDisplay = $PoemLabel
 @onready var clouds: Array = []
 
+
 func _ready():
+	
+	var overlay = get_tree().root.get_node_or_null("TransitionOverlay")
+
+	if overlay:
+		var tween = create_tween()
+		tween.tween_property(overlay, "color:a", 0.0, 1.5)
+
+		tween.finished.connect(func():
+			overlay.queue_free()
+		)
+	
+	
 	clouds = [$Cloud1, $Cloud2, $Cloud3]
 
 	# Centrado en pantalla de 1152x648
@@ -29,10 +42,6 @@ func _on_progress(progress: float):
 		for i in range(revealed_count):
 			var word_key = recognizer.POEM_VARIANTS.keys()[i]
 			poem_display.reveal_word(word_key)
-	
-	
-	
-	
-	
+				
 	if progress >= 1.0:
 		print("Poema completo!")

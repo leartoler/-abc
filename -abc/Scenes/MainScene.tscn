@@ -1,23 +1,95 @@
 [gd_scene format=3 uid="uid://dpktfdco6b7nj"]
 
-[ext_resource type="Script" path="res://Scenes/Scene.gd" id="1_hpc76"]
+[ext_resource type="Script" uid="uid://b74r2e7budi1m" path="res://Codigos/MenuScene.gd" id="1_tr2i4"]
 [ext_resource type="Texture2D" uid="uid://t7kynvb4hk1t" path="res://Imagenes/rect1.png" id="2_tr2i4"]
+[ext_resource type="VideoStream" uid="uid://ci8h2v5mitd4y" path="res://Videos/video_menu.ogv" id="3_nhkr4"]
+[ext_resource type="Texture2D" uid="uid://bmpy3lpxx5pmb" path="res://Imagenes/Button_1.png" id="4_7rqgy"]
+[ext_resource type="Texture2D" uid="uid://dvx423x3cewa8" path="res://Imagenes/Button_2.png" id="5_f140w"]
+[ext_resource type="Texture2D" uid="uid://1k3exdk7venq" path="res://Imagenes/Button_3.png" id="6_0iob3"]
+[ext_resource type="Texture2D" uid="uid://dhhvilfe6k7oa" path="res://Imagenes/Button_4.png" id="7_4b75m"]
+[ext_resource type="Texture2D" uid="uid://b7cmxo643hrk1" path="res://Imagenes/Button_5.png" id="8_8ju71"]
 
 [node name="MainScene" type="Node2D" unique_id=462590306]
-script = ExtResource("1_hpc76")
+script = ExtResource("1_tr2i4")
 
-[node name="ColorRect2" type="ColorRect" parent="." unique_id=1587036498]
-offset_left = -21.0
-offset_top = -9.0
-offset_right = 1162.0
-offset_bottom = 660.0
-
-[node name="ColorRect" type="ColorRect" parent="." unique_id=1828257185]
-visible = false
-offset_right = 1158.0
-offset_bottom = 670.0
-color = Color(0, 0, 0, 1)
+[node name="VideoPlayer" type="VideoStreamPlayer" parent="." unique_id=1465976171]
+offset_right = 3840.0
+offset_bottom = 2160.0
+scale = Vector2(0.3, 0.3)
+stream = ExtResource("3_nhkr4")
+autoplay = true
+loop = true
 
 [node name="Rect1" type="Sprite2D" parent="." unique_id=595809514]
+visible = false
 position = Vector2(576, 339)
 texture = ExtResource("2_tr2i4")
+
+[node name="Cuadros" type="Node" parent="." unique_id=2032654752]
+
+[node name="Cuadro1" type="TextureButton" parent="Cuadros" unique_id=214284349]
+offset_left = 71.0
+offset_top = 85.0
+offset_right = 279.0
+offset_bottom = 293.0
+texture_normal = ExtResource("4_7rqgy")
+
+[node name="Cuadro2" type="TextureButton" parent="Cuadros" unique_id=222057116]
+offset_left = 76.0
+offset_top = 399.0
+offset_right = 284.0
+offset_bottom = 607.0
+texture_normal = ExtResource("5_f140w")
+
+[node name="Cuadro3" type="TextureButton" parent="Cuadros" unique_id=695535464]
+offset_left = 871.0
+offset_top = 85.0
+offset_right = 1079.0
+offset_bottom = 293.0
+texture_normal = ExtResource("6_0iob3")
+
+[node name="Cuadro4" type="TextureButton" parent="Cuadros" unique_id=1593920950]
+offset_left = 859.0
+offset_top = 369.0
+offset_right = 1067.0
+offset_bottom = 577.0
+texture_normal = ExtResource("7_4b75m")
+
+[node name="Cuadro5" type="TextureButton" parent="Cuadros" unique_id=251286078]
+offset_left = 497.0
+offset_top = 255.0
+offset_right = 705.0
+offset_bottom = 463.0
+texture_normal = ExtResource("8_8ju71")
+
+[node name="Etiquetas" type="Node" parent="." unique_id=154515842]
+
+[node name="Label1" type="Label" parent="Etiquetas" unique_id=2032413607]
+offset_left = 132.0
+offset_top = 327.0
+offset_right = 268.0
+offset_bottom = 350.0
+
+[node name="Label2" type="Label" parent="Etiquetas" unique_id=285670552]
+offset_left = 132.0
+offset_top = 327.0
+offset_right = 268.0
+offset_bottom = 350.0
+
+[node name="Label3" type="Label" parent="Etiquetas" unique_id=416076803]
+offset_left = 132.0
+offset_top = 327.0
+offset_right = 268.0
+offset_bottom = 350.0
+
+[node name="Label4" type="Label" parent="Etiquetas" unique_id=1082709643]
+offset_left = 276.0
+offset_top = 312.0
+offset_right = 412.0
+offset_bottom = 335.0
+
+[node name="Label5" type="Label" parent="Etiquetas" unique_id=515184261]
+offset_left = 129.0
+offset_top = 353.0
+offset_right = 265.0
+offset_bottom = 376.0
