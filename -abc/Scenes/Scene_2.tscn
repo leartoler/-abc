@@ -1,17 +1,16 @@
 [gd_scene format=3 uid="uid://brv1071e0sqtw"]
 
 [ext_resource type="Script" uid="uid://ce7lmkqd70cr4" path="res://Codigos/MainScene.gd" id="1_yddb5"]
+[ext_resource type="VideoStream" uid="uid://by28qgl3fhuue" path="res://Videos/video_1.ogv" id="2_1mg3l"]
 [ext_resource type="Script" uid="uid://pw1q6dqj28ho" path="res://Codigos/SpeechRecognizer.gd" id="2_d8gkh"]
-[ext_resource type="Script" uid="uid://doqiyx8eu4qt2" path="res://Scenes/Cloud2.gd" id="3_d8gkh"]
 [ext_resource type="Script" uid="uid://b5s6u6qaabium" path="res://Codigos/PoemDisplay.gd" id="4_d8gkh"]
-[ext_resource type="Shader" uid="uid://be378elgji7i6" path="res://Scenes/Scene_2.gdshader" id="5_1nv4q"]
-[ext_resource type="Script" uid="uid://c8rlgriiiputg" path="res://Scenes/MeshInstance3d.gd" id="6_4lmuh"]
+[ext_resource type="Shader" uid="uid://be378elgji7i6" path="res://Shaders/Scene_2.gdshader" id="5_1nv4q"]
+[ext_resource type="Script" uid="uid://c8rlgriiiputg" path="res://Codigos/MeshInstance3d.gd" id="6_4lmuh"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_4lmuh"]
-render_priority = 0
+render_priority = 1
 shader = ExtResource("5_1nv4q")
-shader_parameter/fog_color = Color(0.85, 0.9, 1, 1)
-shader_parameter/density = 1.0
+shader_parameter/progress = 0.0
 shader_parameter/time = 0.0
 
 [sub_resource type="QuadMesh" id="QuadMesh_1mg3l"]
@@ -20,31 +19,34 @@ size = Vector2(10, 10)
 [node name="MainScene" type="Node2D" unique_id=1018337201]
 script = ExtResource("1_yddb5")
 
+[node name="SpokenWordLabel" type="Label" parent="." unique_id=1768052693]
+modulate = Color(1, 1, 1, 0.003921569)
+custom_minimum_size = Vector2(0.59, 0.655)
+offset_left = 405.77
+offset_top = 221.0
+offset_right = 536.777
+offset_bottom = 299.45
+text = "hola"
+
+[node name="VideoPlayer" type="VideoStreamPlayer" parent="." unique_id=374852346]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -400.0
+offset_top = -233.00002
+offset_right = 752.0
+offset_bottom = 415.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.9, 1.9)
+stream = ExtResource("2_1mg3l")
+autoplay = true
+loop = true
+
 [node name="TextureRect" type="TextureRect" parent="." unique_id=1645497114]
-offset_right = 40.0
-offset_bottom = 40.0
 
 [node name="SpeechRecognizer" type="Node" parent="." unique_id=1939007110]
 script = ExtResource("2_d8gkh")
-
-[node name="Cloud1" type="ColorRect" parent="." unique_id=1014198632]
-visible = false
-offset_right = 40.0
-offset_bottom = 40.0
-script = ExtResource("3_d8gkh")
-
-[node name="Cloud2" type="ColorRect" parent="." unique_id=32069003]
-visible = false
-offset_right = 40.0
-offset_bottom = 40.0
-script = ExtResource("3_d8gkh")
-
-[node name="Cloud3" type="ColorRect" parent="." unique_id=1846711907]
-visible = false
-offset_right = 1210.0
-offset_bottom = 671.0
-color = Color(0, 0, 0.25882354, 1)
-script = ExtResource("3_d8gkh")
 
 [node name="PoemLabel" type="RichTextLabel" parent="." unique_id=695301534]
 offset_right = 40.0
@@ -57,6 +59,7 @@ offset_bottom = 23.0
 
 [node name="SubViewport" type="SubViewport" parent="." unique_id=2052543616]
 transparent_bg = true
+size = Vector2i(1152, 648)
 render_target_update_mode = 4
 
 [node name="Node3D" type="Node3D" parent="SubViewport" unique_id=385935388]
@@ -68,6 +71,7 @@ current = true
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="SubViewport/Node3D" unique_id=1188675298]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="SubViewport/Node3D" unique_id=397477999]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5198722, 2.8493657)
 material_override = SubResource("ShaderMaterial_4lmuh")
 mesh = SubResource("QuadMesh_1mg3l")
 script = ExtResource("6_4lmuh")
