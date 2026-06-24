@@ -13,7 +13,7 @@ extends Node2D
 
 #Cambiar por el numero de palabras
 var palabras_correctas := 0
-const PALABRAS_OBJETIVO := 18
+const PALABRAS_OBJETIVO := 10
 ##################333
 
 func mostrar_instruccion(texto: String):

@@ -1,8 +1,8 @@
 extends Node2D
 
 @onready var fog_mesh = $SubViewport/Node3D/MeshInstance3D
-@onready var recognizer: SpeechRecognizer2 = $SpeechRecognizer
-@onready var poem_display: PoemDisplay2 = $PoemLabel
+@onready var recognizer: SpeechRecognizer4 = $SpeechRecognizer
+@onready var poem_display: PoemDisplay4 = $PoemLabel
 @onready var instruction_label: Label = $InstructionLabel
 @onready var spoken_word_label = $SpokenWordLabel
 @onready var spoken_word_bg = $SpokenWordBg

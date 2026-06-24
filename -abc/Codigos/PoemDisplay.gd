@@ -60,19 +60,16 @@ func _show_word(word:String, revealed:bool) -> String:
 
 
 func _show_verb(index:int) -> String:
-
 	if _verbs[index] != "______":
-
 		return (
 			"[color=#ed9f00][font_size=64]"
 			+ _verbs[index]
 			+ "[/font_size][/color]"
 		)
-
 	return (
-		"[color=b53933][font_size=64]"
-		+ "______"
-		+ "[/font_size][/color]"
+		"[bgcolor=#b53933][font_size=64]"
+		+ "        "  # espacios = ancho del rectángulo
+		+ "[/font_size][/bgcolor]"
 	)
 
 

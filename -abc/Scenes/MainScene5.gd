@@ -1,8 +1,8 @@
 extends Node2D
 
 @onready var fog_mesh = $SubViewport/Node3D/MeshInstance3D
-@onready var recognizer: SpeechRecognizer2 = $SpeechRecognizer
-@onready var poem_display: PoemDisplay2 = $PoemLabel
+@onready var recognizer: SpeechRecognizer5 = $SpeechRecognizer
+@onready var poem_display: PoemDisplay5 = $PoemLabel
 @onready var instruction_label: Label = $InstructionLabel
 @onready var spoken_word_label = $SpokenWordLabel
 @onready var spoken_word_bg = $SpokenWordBg
@@ -12,7 +12,7 @@ extends Node2D
 @export var bg_color: Color = Color(0, 0, 0, 0.5)
 #Cambiar por el numero de palabras
 var palabras_correctas := 0
-const PALABRAS_OBJETIVO := 15
+const PALABRAS_OBJETIVO := 20
 ##################333
 
 

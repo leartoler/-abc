@@ -138,4 +138,4 @@ script = ExtResource("6_1raot")
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=294138812]
 stream = ExtResource("7_afh7w")
 autoplay = true
-parameters/looping = true
+parameters/looping = false

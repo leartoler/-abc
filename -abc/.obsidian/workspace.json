@@ -71,12 +71,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Documentos/Documento técnico.md",
+                "file": "Documentos/Sobre el artista.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Documento técnico"
+              "title": "Sobre el artista"
             }
           }
         ],
@@ -259,6 +259,8 @@
   },
   "active": "57711b0632014432",
   "lastOpenFiles": [
+    "Documentos/Declaración de artista.md",
+    "Documentos/Documento técnico.md",
     "Poemas/Lo fugaz. Ricardo Jaimes Freyre.md",
     "Bibliografía/Poesía",
     "Proceso/2026-06-16.md",
@@ -286,9 +288,7 @@
     "Imagenes/Pasted image 20260608092820.png",
     "Imagenes/rect1.png",
     "Documentos/Sobre el artista.md",
-    "Documentos/Declaración de artista.md",
     "Imagenes/Pasted image 20260608072551.png",
-    "Documentos/Documento técnico.md",
     "Imagenes/d.jpg",
     "Imagenes/c.jpg",
     "Imagenes/b.jpg",

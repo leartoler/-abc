@@ -1,25 +1,35 @@
 class_name PoemDisplay3
 extends RichTextLabel
 
-var _verbs := [
-	"______",
-	"______",
+var _nouns := [
+	"______", # vida
+	"______", # lágrimas
+	"______", # lluvia
 ]
 
-var _al := false
-var _para := false
-var _me := false
-var _pensar := false
-var _cosas := false
-var _en := false
-var _el := false
+var _toda := false
+var _tu := false
+var _vida := false
+
+var _lo := false
+var _que := false
+var _has := false
+var _visto := false
+var _y := false
+var _sentido := false
+
+var _todo := false
+var _se := false
+var _perdera := false
+
 var _como := false
-var _contemplar := false
-var _abismo := false
-var _de := false
-var _nuestra := false
-var _existencia := false
-var _un := false
+var _lagrimas := false
+var _arrastradas := false
+
+var _por := false
+var _la := false
+var _lluvia := false
+
 
 func _ready():
 
@@ -27,63 +37,78 @@ func _ready():
 	fit_content = true
 	autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 
-	size = Vector2(1200, 300)
-	position = Vector2(50, 400)
+	size = Vector2(1200, 500)
+	position = Vector2(50, 250)
 
 	_update_display()
 
 
 func reveal_word(word: String):
 
+	word = word.to_lower()
+
 	match word:
 
-		"al":
-			_al = true
+		"toda":
+			_toda = true
 
-		"para":
-			_para = true
+		"tu":
+			_tu = true
 
-		"me":
-			_me = true
-			
-		"pensar":
-			_pensar = true
+		"vida":
+			_vida = true
 
-		"cosas":
-			_cosas = true
+		"lo":
+			_lo = true
 
-		"en":
-			_en = true
-		"el":
-			_el = true
+		"que":
+			_que = true
+
+		"has":
+			_has = true
+
+		"visto":
+			_visto = true
+
+		"y":
+			_y = true
+
+		"sentido":
+			_sentido = true
+
+		"todo":
+			_todo = true
+
+		"se":
+			_se = true
+
+		"perdera", "perderá":
+			_perdera = true
 
 		"como":
 			_como = true
 
-		"contemplar":
-			_contemplar = true
-			
-		"abismo":
-			_abismo = true
-			
-		"de":
-			_de = true
-			
-		"nuestra":
-			_nuestra = true
-			
-		"existecia":
-			_existencia = true
-			
-		"un":
-			_un = true
+		"lagrimas", "lágrimas":
+			_lagrimas = true
+
+		"arrastradas":
+			_arrastradas = true
+
+		"por":
+			_por = true
+
+		"la":
+			_la = true
+
+		"lluvia":
+			_lluvia = true
 
 		_:
-			for i in range(_verbs.size()):
+			for i in range(_nouns.size()):
 
-				if _verbs[i] == "______":
+				if _nouns[i] == "______":
 
-					_verbs[i] = word
+					_nouns[i] = word
 					break
 
 	_update_display()
@@ -97,20 +122,20 @@ func _show_word(word:String, revealed:bool) -> String:
 	return "[color=#00000000][font_size=64]" + word + "[/font_size][/color]"
 
 
-func _show_verb(index:int) -> String:
+func _show_noun(index:int) -> String:
 
-	if _verbs[index] != "______":
+	if _nouns[index] != "______":
 
 		return (
-			"[color=#ed9f00][font_size=64]"
-			+ _verbs[index]
+			"[color=#996d92][font_size=64]"
+			+ _nouns[index]
 			+ "[/font_size][/color]"
 		)
 
 	return (
-		"[color=b53933][font_size=64]"
-		+ "______"
-		+ "[/font_size][/color]"
+		"[bgcolor=#bde5f2][font_size=64]"
+		+ "        "
+		+ "[/font_size][/bgcolor]"
 	)
 
 
@@ -118,36 +143,57 @@ func _update_display():
 
 	var result := ""
 
-	# PENSAR COSAS EN EL TIANGUIS
-	result += _show_word("pensar", _pensar)
-	result += "     "
-	result += _show_word("cosas", _cosas)
-	result += "     "
-	result += _show_word("en", _en)
-	result += "     "
-	result += _show_word("el", _el)
-	result += "     "
-	result += _show_verb(0) # LUGAR A (tianguis)
+	# Toda tu VIDA,
+	result += _show_word("Toda", _toda)
+	result += " "
+	result += _show_word("tu", _tu)
+	result += " "
+	result += _show_noun(0)
+	result += ","
 
 	result += "\n"
 
-	# COMO CONTEMPLAR EL ABISMO DE NUESTRA EXISTENCIA EN EL PANTEÓN
+	# lo que has visto y sentido,
+	result += _show_word("lo", _lo)
+	result += " "
+	result += _show_word("que", _que)
+	result += " "
+	result += _show_word("has", _has)
+	result += " "
+	result += _show_word("visto", _visto)
+	result += " "
+	result += _show_word("y", _y)
+	result += " "
+	result += _show_word("sentido", _sentido)
+	result += ","
+
+	result += "\n"
+
+	# todo se perderá,
+	result += _show_word("todo", _todo)
+	result += " "
+	result += _show_word("se", _se)
+	result += " "
+	result += _show_word("perderá", _perdera)
+	result += ","
+
+	result += "\n"
+
+	# como LÁGRIMAS arrastradas
 	result += _show_word("como", _como)
-	result += "     "
-	result += _show_word("contemplar", _contemplar)
-	result += "     "
-	result += _show_word("el", _el)
-	result += "     "
-	result += _show_word("abismo", _abismo)
-	result += "     "
-	result += _show_word("de", _de)
-	result += "     "
-	result += _show_word("nuestra", _nuestra)
-	result += "     "
-	result += _show_word("existencia", _existencia)
-	result += "     "
-	result += _show_word("en", _en)
-	result += "     "
-	result += _show_verb(1) # LUGAR B (panteón)
+	result += " "
+	result += _show_noun(1)
+	result += " "
+	result += _show_word("arrastradas", _arrastradas)
+
+	result += "\n"
+
+	# por la LLUVIA.
+	result += _show_word("por", _por)
+	result += " "
+	result += _show_word("la", _la)
+	result += " "
+	result += _show_noun(2)
+	result += "."
 
 	text = result
