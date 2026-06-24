@@ -1,20 +1,19 @@
 extends Node2D
 
 @onready var fog_mesh = $SubViewport/Node3D/MeshInstance3D
-@onready var recognizer: SpeechRecognizer = $SpeechRecognizer
-@onready var poem_display: PoemDisplay = $PoemLabel
+@onready var recognizer: SpeechRecognizer2 = $SpeechRecognizer
+@onready var poem_display: PoemDisplay2 = $PoemLabel
 @onready var instruction_label: Label = $InstructionLabel
 @onready var spoken_word_label = $SpokenWordLabel
-@onready var spoken_word_bg = $SpokenWordBg
 @onready var spoken_word_start_pos = $SpokenWordLabel.position
 @onready var return_button = $ReturnButton
-
-@export var bg_color: Color = Color(0, 0, 0, 0.5)
-
 #Cambiar por el numero de palabras
 var palabras_correctas := 0
-const PALABRAS_OBJETIVO := 10
+const PALABRAS_OBJETIVO := 15
 ##################333
+
+
+
 
 func mostrar_instruccion(texto: String):
 	instruction_label.text = texto
@@ -55,8 +54,7 @@ func mostrar_instruccion(texto: String):
 
 
 func _ready():
-	spoken_word_bg.z_index = 99 #BG
-	spoken_word_label.z_index = 100 #BG	
+	
 	return_button.pressed.connect(_on_return_button_pressed)	
 	$TextureRect.texture = $SubViewport.get_texture()	
 	spoken_word_label.z_index = 100
@@ -77,7 +75,7 @@ func _ready():
 		print("Escuche: ", w)
 		show_spoken_word(w)
 )	
-	#mostrar_instruccion("Siento al caminar, camino para perderme,\nme pierdo para descubrirme \n \nCambia los verbos por cualquier verbo, que comience con una vocal \ny que te interpele, en tiempo infinitivo.")
+	mostrar_instruccion("Pensar cosas en el tianguis, como contemplar el abismo de nuestra existencia en un panteón \n \nCambia los lugares  por cualquier otro lugar general\nUno que te haya significado y te construya.")
 
 func show_spoken_word(word: String):
 	spoken_word_label.position = spoken_word_start_pos
@@ -85,33 +83,31 @@ func show_spoken_word(word: String):
 	spoken_word_label.visible = true
 	spoken_word_label.modulate.a = 1.0
 	spoken_word_label.scale = Vector2(1.5, 1.5)
-
-	# Ajustar el fondo al tamaño del texto
-	var padding = Vector2(20, 10)
-	var text_size = spoken_word_label.get_theme_font("font").get_string_size(
-		word,
-		HORIZONTAL_ALIGNMENT_LEFT,
-		-1,
-		spoken_word_label.get_theme_font_size("font_size")
-	)
-	spoken_word_bg.size = text_size + padding
-	spoken_word_bg.position = spoken_word_start_pos - padding / 2
-	spoken_word_bg.visible = true
-	spoken_word_bg.modulate.a = 1.0
-	spoken_word_bg.color = bg_color
-
 	var tween = create_tween()
-	tween.parallel().tween_property(spoken_word_label, "position", spoken_word_start_pos + Vector2(0, -40), 5)
-	tween.parallel().tween_property(spoken_word_label, "modulate:a", 0.0, 5)
-	tween.parallel().tween_property(spoken_word_label, "scale", Vector2(1.0, 1.0), 4)
-	# Animar el fondo junto con el label
-	tween.parallel().tween_property(spoken_word_bg, "position:y", spoken_word_bg.position.y - 40, 5)
-	tween.parallel().tween_property(spoken_word_bg, "modulate:a", 0.0, 5)
+	tween.parallel().tween_property(
+		spoken_word_label,
+		"position",
+		spoken_word_start_pos + Vector2(0, -40),
+		5
+	)
+
+	tween.parallel().tween_property(
+		spoken_word_label,
+		"modulate:a",
+		0.0,
+		5
+	)
+
+	tween.parallel().tween_property(
+		spoken_word_label,
+		"scale",
+		Vector2(1.0, 1.0),
+		4
+	)
 
 	tween.finished.connect(
 		func():
 			spoken_word_label.visible = false
-			spoken_word_bg.visible = false
 			spoken_word_label.position = spoken_word_start_pos
 			spoken_word_label.scale = Vector2(1.0, 1.0)
 	)

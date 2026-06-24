@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://bu2vvfogu34da"]
+
+[ext_resource type="Script" uid="uid://qh6lpjgh3xki" path="res://Codigos/IntroManager.gd" id="1_klqiu"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_klqiu"]
+load_path = "res://.godot/imported/Escena_1.png-35900b16e5cbb1afe0a4bcaab289bcd5.ctex"
+
+[node name="MenuScene" type="Node2D" unique_id=341158587]
+
+[node name="Fondo" type="ColorRect" parent="." unique_id=1074364624]
+offset_left = -2.0
+offset_right = 1155.0
+offset_bottom = 650.0
+color = Color(0.2509804, 0.3137255, 0.19215687, 1)
+
+[node name="Logo" type="TextureRect" parent="." unique_id=1676056352]
+offset_left = -3.0000029
+offset_top = -1.0000305
+offset_right = 3001.9385
+offset_bottom = 1636.0374
+scale = Vector2(0.405, 0.405)
+texture = SubResource("CompressedTexture2D_klqiu")
+expand_mode = 3
+
+[node name="IntroManager" type="Node" parent="." unique_id=571967745]
+script = ExtResource("1_klqiu")

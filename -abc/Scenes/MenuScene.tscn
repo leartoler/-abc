@@ -22,3 +22,6 @@ expand_mode = 3
 
 [node name="IntroManager" type="Node" parent="." unique_id=571967745]
 script = ExtResource("2_xx56i")
+next_scene = "res://Scenes/MainScene.tscn"
+color_inicial = Color(0.0037576945, 0.007009108, 0.0014361904, 1)
+color_final = Color(0.017485715, 0.019197585, 0.008157836, 1)

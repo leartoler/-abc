@@ -1,15 +1,23 @@
 [gd_scene format=3 uid="uid://bnir64e1nle18"]
 
-[ext_resource type="Script" uid="uid://ce7lmkqd70cr4" path="res://Codigos/MainScene.gd" id="1_1y18a"]
-[ext_resource type="VideoStream" uid="uid://by28qgl3fhuue" path="res://Videos/video_1.ogv" id="2_7wgtc"]
-[ext_resource type="Script" uid="uid://pw1q6dqj28ho" path="res://Codigos/SpeechRecognizer.gd" id="2_dk8ui"]
-[ext_resource type="Script" uid="uid://b5s6u6qaabium" path="res://Codigos/PoemDisplay.gd" id="2_n8efl"]
-[ext_resource type="Shader" uid="uid://be378elgji7i6" path="res://Shaders/Scene_2.gdshader" id="5_afh7w"]
-[ext_resource type="Script" uid="uid://c8rlgriiiputg" path="res://Codigos/MeshInstance3d.gd" id="6_oqi02"]
+[ext_resource type="Script" uid="uid://ce7lmkqd70cr4" path="res://Codigos/MainScene.gd" id="1_7wgtc"]
+[ext_resource type="FontFile" uid="uid://bifydsdyth2dp" path="res://Fuente/Helvetica-Bold.ttf" id="2_oqi02"]
+[ext_resource type="Script" uid="uid://pw1q6dqj28ho" path="res://Codigos/SpeechRecognizer.gd" id="3_oqi02"]
+[ext_resource type="FontFile" uid="uid://dc70wov847pfb" path="res://Fuente/Peignot.ttf" id="4_7wgtc"]
+[ext_resource type="Script" uid="uid://b5s6u6qaabium" path="res://Codigos/PoemDisplay.gd" id="4_utmhu"]
+[ext_resource type="Shader" uid="uid://be378elgji7i6" path="res://Shaders/Scene_2.gdshader" id="5_y8lnb"]
+[ext_resource type="Script" uid="uid://c8rlgriiiputg" path="res://Codigos/MeshInstance3d.gd" id="6_1raot"]
+[ext_resource type="AudioStream" uid="uid://c10gdugocobgo" path="res://Sonidos/Sound1.mp3" id="7_afh7w"]
+
+[sub_resource type="VideoStreamTheora" id="VideoStreamTheora_l3se7"]
+file = "res://Videos/video_1.ogv"
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oqi02"]
+bg_color = Color(0.78431374, 0.6745098, 0.21568628, 1)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_4lmuh"]
 render_priority = 1
-shader = ExtResource("5_afh7w")
+shader = ExtResource("5_y8lnb")
 shader_parameter/progress = 0.0
 shader_parameter/time = 0.0
 
@@ -17,39 +25,99 @@ shader_parameter/time = 0.0
 size = Vector2(10, 10)
 
 [node name="MainScene" type="Node2D" unique_id=1018337201]
-script = ExtResource("1_1y18a")
+script = ExtResource("1_7wgtc")
+bg_color = Color(0.8862745, 0.18431373, 0.13333334, 1)
+
+[node name="SpokenWordLabel" type="Label" parent="." unique_id=1768052693]
+modulate = Color(1, 1, 1, 0.003921569)
+custom_minimum_size = Vector2(0.59, 0.655)
+offset_left = 939.0
+offset_top = 540.0
+offset_right = 1089.0
+offset_bottom = 601.45
+scale = Vector2(1.025, 1.025)
+theme_override_colors/font_color = Color(0.9289947, 0.6254114, 0, 1)
+theme_override_colors/font_outline_color = Color(0.70980394, 0.22352941, 0.2, 1)
+theme_override_constants/outline_size = 1
+theme_override_fonts/font = ExtResource("2_oqi02")
+theme_override_font_sizes/font_size = 28
+
+[node name="SpokenWordBg" type="ColorRect" parent="." unique_id=514129952]
+visible = false
+offset_left = 923.0
+offset_top = 538.0
+offset_right = 1102.0
+offset_bottom = 608.0
 
 [node name="VideoPlayer" type="VideoStreamPlayer" parent="." unique_id=374852346]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -424.0
-offset_top = -232.0
-offset_right = 728.0
-offset_bottom = 416.0
+offset_left = -217.0
+offset_top = -77.0
+offset_right = 935.0
+offset_bottom = 571.0
 grow_horizontal = 2
 grow_vertical = 2
-scale = Vector2(1.9, 1.9)
-stream = ExtResource("2_7wgtc")
+scale = Vector2(2, 2)
+stream = SubResource("VideoStreamTheora_l3se7")
 autoplay = true
 loop = true
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=1645497114]
+offset_right = 1152.0
+offset_bottom = 648.0
+scale = Vector2(1.505, 1.505)
+mouse_filter = 2
 
 [node name="SpeechRecognizer" type="Node" parent="." unique_id=1939007110]
-script = ExtResource("2_dk8ui")
+script = ExtResource("3_oqi02")
 
 [node name="PoemLabel" type="RichTextLabel" parent="." unique_id=695301534]
-offset_right = 40.0
-offset_bottom = 40.0
-script = ExtResource("2_n8efl")
+offset_left = 50.0
+offset_top = 400.0
+offset_right = 90.0
+offset_bottom = 440.0
+theme_override_colors/default_color = Color(0.92941177, 0.62352943, 0, 1)
+theme_override_colors/selection_color = Color(0.70980394, 0.22352941, 0.2, 1)
+theme_override_colors/font_outline_color = Color(0.70980394, 0.22352941, 0.2, 1)
+theme_override_constants/paragraph_separation = 0
+theme_override_constants/outline_size = 2
+theme_override_fonts/normal_font = ExtResource("4_7wgtc")
+theme_override_fonts/bold_font = ExtResource("4_7wgtc")
+theme_override_fonts/bold_italics_font = ExtResource("4_7wgtc")
+theme_override_fonts/italics_font = ExtResource("4_7wgtc")
+theme_override_fonts/mono_font = ExtResource("4_7wgtc")
+bbcode_enabled = true
+autowrap_mode = 0
+script = ExtResource("4_utmhu")
 
 [node name="InstructionLabel" type="Label" parent="." unique_id=356564827]
-offset_right = 40.0
+offset_right = 1.0
 offset_bottom = 23.0
+scale = Vector2(2, 2)
+theme_override_colors/font_color = Color(0.81960785, 0.24313726, 0.19607843, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0.25882354, 1)
+theme_override_constants/outline_size = 1
+theme_override_fonts/font = ExtResource("4_7wgtc")
+theme_override_font_sizes/font_size = 20
+
+[node name="ReturnButton" type="Button" parent="." unique_id=428985421]
+visible = false
+offset_left = 939.0
+offset_top = 540.0
+offset_right = 1018.0
+offset_bottom = 576.0
+theme_override_colors/font_color = Color(0.8862745, 0.18431373, 0.13333334, 1)
+theme_override_colors/font_outline_color = Color(0.7882353, 0.6666667, 0, 1)
+theme_override_fonts/font = ExtResource("2_oqi02")
+theme_override_font_sizes/font_size = 27
+theme_override_styles/normal = SubResource("StyleBoxFlat_oqi02")
+text = "Inicio"
 
 [node name="SubViewport" type="SubViewport" parent="." unique_id=2052543616]
 transparent_bg = true
+handle_input_locally = false
 size = Vector2i(1152, 648)
 render_target_update_mode = 4
 
@@ -65,4 +133,9 @@ current = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5198722, 2.8493657)
 material_override = SubResource("ShaderMaterial_4lmuh")
 mesh = SubResource("QuadMesh_1mg3l")
-script = ExtResource("6_oqi02")
+script = ExtResource("6_1raot")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=294138812]
+stream = ExtResource("7_afh7w")
+autoplay = true
+parameters/looping = true

@@ -1,7 +1,7 @@
 shader_type spatial;
 render_mode unshaded, blend_add, cull_disabled;
 
-uniform float progress = 0.0;
+uniform float progress : hint_range(0.0, 1.0) = 0.0;
 uniform float time = 0.0;
 
 float hash(vec2 p)
@@ -14,33 +14,31 @@ float hash(vec2 p)
 
 void fragment()
 {
-	vec2 uv =
-		UV - 0.5;
+	vec2 uv = UV - 0.5;
 
-	float d =
-		length(uv);
+	float d = length(uv);
 
 	float pulse =
-		0.5 +
-		0.5 *
+		0.75 +
+		0.8 *
 		sin(
 			time +
 			d * 15.0
 		);
 
-	float alpha =
-		(1.0 - d)
-		*
-		(1.0 - progress)
-		*
-		pulse;
-
 	vec3 color =
 		mix(
-			vec3(0.2,0.0,0.8),
-			vec3(1.0,0.2,0.8),
+			vec3(0.7, 0.0, 1.0),
+			vec3(0.1, 0.1, 2.0),
 			pulse
 		);
+
+	float alpha =
+		max(0.0, 1.4 - d)
+		* (1.0 - progress)
+		* pulse;
+
+	alpha = clamp(alpha, 0.0, 1.0);
 
 	ALBEDO = color;
 	ALPHA = alpha;

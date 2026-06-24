@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://d2j8trpirnnud"]
+
+[ext_resource type="Texture2D" uid="uid://ctck0agjyiga2" path="res://Imagenes/Escena_5.png" id="1_lemai"]
+[ext_resource type="Script" uid="uid://qh6lpjgh3xki" path="res://Codigos/IntroManager.gd" id="2_dvutf"]
+
+[node name="MenuScene" type="Node2D" unique_id=341158587]
+
+[node name="Fondo" type="ColorRect" parent="." unique_id=1074364624]
+offset_left = -2.0
+offset_right = 1155.0
+offset_bottom = 650.0
+color = Color(0.2509804, 0.3137255, 0.19215687, 1)
+
+[node name="Logo" type="TextureRect" parent="." unique_id=1676056352]
+offset_left = -3.0000029
+offset_top = -1.0000305
+offset_right = 3001.9385
+offset_bottom = 1636.0374
+scale = Vector2(0.405, 0.405)
+texture = ExtResource("1_lemai")
+expand_mode = 3
+
+[node name="IntroManager" type="Node" parent="." unique_id=571967745]
+script = ExtResource("2_dvutf")
+next_scene = "res://Scenes/Scene_5.tscn"
+color_inicial = Color(0.6040076, 0.29089054, 0.40246713, 1)
+color_final = Color(0.40375876, 0.30383408, 0.50145656, 1)

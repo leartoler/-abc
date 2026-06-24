@@ -1,47 +1,61 @@
 shader_type spatial;
 render_mode unshaded, cull_disabled;
 
-uniform float progress = 0.0;
-uniform float time = 0.0;
+uniform float progress : hint_range(0.0, 1.0) = 0.0;
 
-float rand(vec2 p)
+uniform vec4 deep_blue : source_color = vec4(0.05, 0.15, 0.40, 1.0);
+uniform vec4 medium_blue : source_color = vec4(0.15, 0.35, 0.75, 1.0);
+uniform vec4 foam_color : source_color = vec4(1.0, 1.0, 1.0, 1.0);
+
+varying float v_wave;
+varying vec2 v_uv;
+
+void vertex()
 {
-	return fract(
-		sin(dot(p, vec2(12.9898,78.233)))
-		* 43758.5453
-	);
+    v_uv = UV;
+
+    float wave =
+        sin(UV.x * 10.0 + TIME)
+        * 0.2;
+
+    VERTEX.y += wave;
+
+    v_wave = wave;
 }
 
 void fragment()
 {
-	vec2 cell =
-		floor(UV * 80.0);
+    vec2 uv = v_uv;
 
-	float r =
-		rand(cell);
+    float stripes =
+        sin(
+            uv.y * 40.0 +
+            uv.x * 8.0 +
+            TIME * 0.5
+        );
 
-	vec2 offset =
-		vec2(
-			sin(time + r * 20.0),
-			cos(time + r * 20.0)
-		)
-		*
-		progress
-		*
-		0.1;
+    vec3 color =
+        mix(
+            deep_blue.rgb,
+            medium_blue.rgb,
+            smoothstep(-0.2, 0.2, stripes)
+        );
 
-	float visible =
-		step(
-			progress,
-			r
-		);
+    float foam =
+        smoothstep(
+            0.12,
+            0.18,
+            v_wave
+        );
 
-	ALBEDO =
-		vec3(
-			0.8,
-			0.9,
-			1.0
-		);
+    color =
+        mix(
+            color,
+            foam_color.rgb,
+            foam
+        );
 
-	ALPHA = visible;
+    ALBEDO = color;
+
+    ALPHA = 1.0 - progress;
 }

@@ -1,25 +1,26 @@
-[gd_scene format=3 uid="uid://brv1071e0sqtw"]
+[gd_scene format=3 uid="uid://dqn3580rjasaj"]
 
-[ext_resource type="Script" uid="uid://cbmy3qjyphqvc" path="res://Codigos/MainScene2.gd" id="1_b0dm1"]
-[ext_resource type="FontFile" uid="uid://dc70wov847pfb" path="res://Fuente/Peignot.ttf" id="2_1mg3l"]
-[ext_resource type="VideoStream" uid="uid://c36s8b7er3hxb" path="res://Videos/video_2.ogv" id="3_1mg3l"]
-[ext_resource type="Script" uid="uid://b5lq2ad0ii6du" path="res://Codigos/SpeechRecognizer2.gd" id="3_4lmuh"]
-[ext_resource type="Script" uid="uid://4uehj7o6luf7" path="res://Codigos/PoemDisplay2.gd" id="4_1mg3l"]
-[ext_resource type="Shader" uid="uid://d0qmes0p1ys35" path="res://Shaders/Scene_4.gdshader" id="6_1mg3l"]
-[ext_resource type="Script" uid="uid://c8rlgriiiputg" path="res://Codigos/MeshInstance3d.gd" id="6_i3ib0"]
-[ext_resource type="AudioStream" uid="uid://c10gdugocobgo" path="res://Sonidos/Sound1.mp3" id="7_1mg3l"]
+[ext_resource type="Script" uid="uid://ce7lmkqd70cr4" path="res://Codigos/MainScene.gd" id="1_mj4a8"]
+[ext_resource type="FontFile" uid="uid://dc70wov847pfb" path="res://Fuente/Peignot.ttf" id="2_lg7e3"]
+[ext_resource type="Script" uid="uid://pw1q6dqj28ho" path="res://Codigos/SpeechRecognizer.gd" id="3_4mj34"]
+[ext_resource type="VideoStream" uid="uid://bpkvoj6rooq6i" path="res://Videos/video_4.ogv" id="3_lg7e3"]
+[ext_resource type="Script" uid="uid://b5s6u6qaabium" path="res://Codigos/PoemDisplay.gd" id="4_4gvx5"]
+[ext_resource type="Script" uid="uid://c8rlgriiiputg" path="res://Codigos/MeshInstance3d.gd" id="6_1eogw"]
+[ext_resource type="Shader" uid="uid://bus38x0nqwub8" path="res://Shaders/Scene_9.gdshader" id="6_lg7e3"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_4lmuh"]
 render_priority = 1
-shader = ExtResource("6_1mg3l")
+shader = ExtResource("6_lg7e3")
 shader_parameter/progress = 0.0
-shader_parameter/time = 0.0
+shader_parameter/deep_blue = Color(0.05, 0.15, 0.4, 1)
+shader_parameter/medium_blue = Color(0.15, 0.35, 0.75, 1)
+shader_parameter/foam_color = Color(1, 1, 1, 1)
 
 [sub_resource type="QuadMesh" id="QuadMesh_1mg3l"]
 size = Vector2(10, 10)
 
 [node name="MainScene" type="Node2D" unique_id=1018337201]
-script = ExtResource("1_b0dm1")
+script = ExtResource("1_mj4a8")
 
 [node name="SpokenWordLabel" type="Label" parent="." unique_id=1768052693]
 modulate = Color(1, 1, 1, 0.003921569)
@@ -32,7 +33,7 @@ scale = Vector2(1.025, 1.025)
 theme_override_colors/font_color = Color(0.9289947, 0.6254114, 0, 1)
 theme_override_colors/font_outline_color = Color(0.70980394, 0.22352941, 0.2, 1)
 theme_override_constants/outline_size = 1
-theme_override_fonts/font = ExtResource("2_1mg3l")
+theme_override_fonts/font = ExtResource("2_lg7e3")
 theme_override_font_sizes/font_size = 28
 
 [node name="VideoPlayer" type="VideoStreamPlayer" parent="." unique_id=374852346]
@@ -46,7 +47,7 @@ offset_bottom = 571.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(2, 2)
-stream = ExtResource("3_1mg3l")
+stream = ExtResource("3_lg7e3")
 autoplay = true
 loop = true
 
@@ -57,7 +58,7 @@ scale = Vector2(1.505, 1.505)
 mouse_filter = 2
 
 [node name="SpeechRecognizer" type="Node" parent="." unique_id=1939007110]
-script = ExtResource("3_4lmuh")
+script = ExtResource("3_4mj34")
 
 [node name="PoemLabel" type="RichTextLabel" parent="." unique_id=695301534]
 offset_left = 50.0
@@ -69,14 +70,14 @@ theme_override_colors/selection_color = Color(0.70980394, 0.22352941, 0.2, 1)
 theme_override_colors/font_outline_color = Color(0.70980394, 0.22352941, 0.2, 1)
 theme_override_constants/paragraph_separation = 0
 theme_override_constants/outline_size = 2
-theme_override_fonts/normal_font = ExtResource("2_1mg3l")
-theme_override_fonts/bold_font = ExtResource("2_1mg3l")
-theme_override_fonts/bold_italics_font = ExtResource("2_1mg3l")
-theme_override_fonts/italics_font = ExtResource("2_1mg3l")
-theme_override_fonts/mono_font = ExtResource("2_1mg3l")
+theme_override_fonts/normal_font = ExtResource("2_lg7e3")
+theme_override_fonts/bold_font = ExtResource("2_lg7e3")
+theme_override_fonts/bold_italics_font = ExtResource("2_lg7e3")
+theme_override_fonts/italics_font = ExtResource("2_lg7e3")
+theme_override_fonts/mono_font = ExtResource("2_lg7e3")
 bbcode_enabled = true
 autowrap_mode = 0
-script = ExtResource("4_1mg3l")
+script = ExtResource("4_4gvx5")
 
 [node name="InstructionLabel" type="Label" parent="." unique_id=356564827]
 offset_right = 1.0
@@ -85,7 +86,7 @@ scale = Vector2(2, 2)
 theme_override_colors/font_color = Color(0.81960785, 0.24313726, 0.19607843, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0.25882354, 1)
 theme_override_constants/outline_size = 1
-theme_override_fonts/font = ExtResource("2_1mg3l")
+theme_override_fonts/font = ExtResource("2_lg7e3")
 theme_override_font_sizes/font_size = 20
 
 [node name="ReturnButton" type="Button" parent="." unique_id=428985421]
@@ -114,9 +115,4 @@ current = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5198722, 2.8493657)
 material_override = SubResource("ShaderMaterial_4lmuh")
 mesh = SubResource("QuadMesh_1mg3l")
-script = ExtResource("6_i3ib0")
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=541272737]
-stream = ExtResource("7_1mg3l")
-autoplay = true
-parameters/looping = true
+script = ExtResource("6_1eogw")

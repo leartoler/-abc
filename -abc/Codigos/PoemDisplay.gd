@@ -1,46 +1,107 @@
 class_name PoemDisplay
 extends RichTextLabel
 
-# El poema completo en orden
-const POEM_WORDS_ORDER: Array = ["el", "rosa", "mas", "rojo"]
-const POEM_DISPLAY: Dictionary = {
-	"el": "el",
-	"rosa": "rosa",
-	"mas": "más",
-	"rojo": "rojo"
-}
+var _verbs := [
+	"______",
+	"______",
+	"______",
+	"______",
+	"______",
+	"______"
+]
 
-var _revealed_words: Array = []
+var _al := false
+var _para := false
+var _me := false
+
 
 func _ready():
-	# Configuración visual del texto
+
 	bbcode_enabled = true
 	fit_content = true
-	autowrap_mode = TextServer.AUTOWRAP_OFF
-	
-	# Tamaño y posición centrada
-	size = Vector2(800, 200)
-	position = Vector2(176, 224)
-	
-	# Muestra el poema completo pero invisible al inicio
+	autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+
+	size = Vector2(1200, 300)
+	position = Vector2(50, 400)
+
 	_update_display()
 
+
 func reveal_word(word: String):
-	if not _revealed_words.has(word):
-		_revealed_words.append(word)
-		_update_display()
+
+	match word:
+
+		"al":
+			_al = true
+
+		"para":
+			_para = true
+
+		"me":
+			_me = true
+
+		_:
+			for i in range(_verbs.size()):
+
+				if _verbs[i] == "______":
+
+					_verbs[i] = word
+					break
+
+	_update_display()
+
+
+func _show_word(word:String, revealed:bool) -> String:
+
+	if revealed:
+		return "[color=#FFFFFF][font_size=64]" + word + "[/font_size][/color]"
+
+	return "[color=#00000000][font_size=64]" + word + "[/font_size][/color]"
+
+
+func _show_verb(index:int) -> String:
+
+	if _verbs[index] != "______":
+
+		return (
+			"[color=#ed9f00][font_size=64]"
+			+ _verbs[index]
+			+ "[/font_size][/color]"
+		)
+
+	return (
+		"[color=b53933][font_size=64]"
+		+ "______"
+		+ "[/font_size][/color]"
+	)
+
 
 func _update_display():
-	var result = ""
-	for i in range(POEM_WORDS_ORDER.size()):
-		var word = POEM_WORDS_ORDER[i]
-		if _revealed_words.has(word):
-			result += "[color=#FFFFFF][font_size=64]" + POEM_DISPLAY[word] + "[/font_size][/color]"
-		else:
-			result += "[color=#00000000][font_size=64]" + POEM_DISPLAY[word] + "[/font_size][/color]"
-		
-		# Agrega espacio entre palabras excepto la última
-		if i < POEM_WORDS_ORDER.size() - 1:
-			result += "[font_size=64]   [/font_size]"
-	
+
+	var result := ""
+
+	result += _show_verb(0)
+	result += "     "
+	result += _show_word("al", _al)
+	result += "     "
+	result += _show_verb(1)
+
+	result += "\n"
+
+	result += _show_verb(2)
+	result += "     "
+	result += _show_word("para", _para)
+	result += "     "
+	result += _show_verb(3)
+
+	result += "\n"
+
+	result += _show_word("me", _me)
+	result += "     "
+	result += _show_verb(4)
+	result += "     "
+	result += _show_word("para", _para)
+	result += "     "
+	result += _show_verb(5)
+
 	text = result

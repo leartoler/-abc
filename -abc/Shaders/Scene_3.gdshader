@@ -5,7 +5,7 @@ uniform float time = 0.0;
 
 void fragment()
 {
-	vec2 p = UV - 0.5;
+	vec2 p = UV - 0.9;
 
 	float angle =
 		atan(p.y,p.x);
@@ -15,7 +15,7 @@ void fragment()
 
 	float lines =
 		fract(
-			radius * 30.0 -
+			radius * 80.0 -
 			time * 2.0
 		);
 

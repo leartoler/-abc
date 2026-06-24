@@ -1,29 +1,26 @@
 [gd_scene format=3 uid="uid://dpktfdco6b7nj"]
 
 [ext_resource type="Script" uid="uid://b74r2e7budi1m" path="res://Codigos/MenuScene.gd" id="1_tr2i4"]
-[ext_resource type="Texture2D" uid="uid://t7kynvb4hk1t" path="res://Imagenes/rect1.png" id="2_tr2i4"]
 [ext_resource type="VideoStream" uid="uid://ci8h2v5mitd4y" path="res://Videos/video_menu.ogv" id="3_nhkr4"]
 [ext_resource type="Texture2D" uid="uid://bmpy3lpxx5pmb" path="res://Imagenes/Button_1.png" id="4_7rqgy"]
 [ext_resource type="Texture2D" uid="uid://dvx423x3cewa8" path="res://Imagenes/Button_2.png" id="5_f140w"]
 [ext_resource type="Texture2D" uid="uid://1k3exdk7venq" path="res://Imagenes/Button_3.png" id="6_0iob3"]
 [ext_resource type="Texture2D" uid="uid://dhhvilfe6k7oa" path="res://Imagenes/Button_4.png" id="7_4b75m"]
 [ext_resource type="Texture2D" uid="uid://b7cmxo643hrk1" path="res://Imagenes/Button_5.png" id="8_8ju71"]
+[ext_resource type="FontFile" uid="uid://dc70wov847pfb" path="res://Fuente/Peignot.ttf" id="8_f140w"]
 
 [node name="MainScene" type="Node2D" unique_id=462590306]
 script = ExtResource("1_tr2i4")
 
 [node name="VideoPlayer" type="VideoStreamPlayer" parent="." unique_id=1465976171]
+modulate = Color(1, 1, 1, 0.7764706)
+self_modulate = Color(1, 1, 1, 0.78039217)
 offset_right = 3840.0
 offset_bottom = 2160.0
 scale = Vector2(0.3, 0.3)
 stream = ExtResource("3_nhkr4")
 autoplay = true
 loop = true
-
-[node name="Rect1" type="Sprite2D" parent="." unique_id=595809514]
-visible = false
-position = Vector2(576, 339)
-texture = ExtResource("2_tr2i4")
 
 [node name="Cuadros" type="Node" parent="." unique_id=2032654752]
 
@@ -65,31 +62,43 @@ texture_normal = ExtResource("8_8ju71")
 [node name="Etiquetas" type="Node" parent="." unique_id=154515842]
 
 [node name="Label1" type="Label" parent="Etiquetas" unique_id=2032413607]
-offset_left = 132.0
-offset_top = 327.0
-offset_right = 268.0
-offset_bottom = 350.0
+offset_left = 82.0
+offset_top = 297.0
+offset_right = 218.0
+offset_bottom = 335.0
+scale = Vector2(1.145, 1.145)
+theme_override_fonts/font = ExtResource("8_f140w")
+theme_override_font_sizes/font_size = 35
+horizontal_alignment = 1
 
 [node name="Label2" type="Label" parent="Etiquetas" unique_id=285670552]
-offset_left = 132.0
-offset_top = 327.0
-offset_right = 268.0
-offset_bottom = 350.0
+offset_left = 92.0
+offset_top = 597.0
+offset_right = 228.0
+offset_bottom = 635.0
+theme_override_fonts/font = ExtResource("8_f140w")
+theme_override_font_sizes/font_size = 35
 
 [node name="Label3" type="Label" parent="Etiquetas" unique_id=416076803]
-offset_left = 132.0
-offset_top = 327.0
-offset_right = 268.0
-offset_bottom = 350.0
+offset_left = 927.0
+offset_top = 302.0
+offset_right = 1063.0
+offset_bottom = 339.0
+theme_override_fonts/font = ExtResource("8_f140w")
+theme_override_font_sizes/font_size = 35
 
 [node name="Label4" type="Label" parent="Etiquetas" unique_id=1082709643]
-offset_left = 276.0
-offset_top = 312.0
-offset_right = 412.0
-offset_bottom = 335.0
+offset_left = 915.0
+offset_top = 596.0
+offset_right = 1051.0
+offset_bottom = 619.0
+theme_override_fonts/font = ExtResource("8_f140w")
+theme_override_font_sizes/font_size = 35
 
 [node name="Label5" type="Label" parent="Etiquetas" unique_id=515184261]
-offset_left = 129.0
-offset_top = 353.0
-offset_right = 265.0
-offset_bottom = 376.0
+offset_left = 511.0
+offset_top = 471.0
+offset_right = 647.0
+offset_bottom = 508.0
+theme_override_fonts/font = ExtResource("8_f140w")
+theme_override_font_sizes/font_size = 35

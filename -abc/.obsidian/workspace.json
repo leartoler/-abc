@@ -78,23 +78,9 @@
               "icon": "lucide-file",
               "title": "Documento técnico"
             }
-          },
-          {
-            "id": "d97ad3a82c44e943",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Proceso/2026-06-10.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "2026-06-10"
-            }
           }
         ],
-        "currentTab": 5
+        "currentTab": 4
       }
     ],
     "direction": "vertical"
@@ -271,8 +257,14 @@
       "digitalgarden:Digital Garden Publication Center": false
     }
   },
-  "active": "d97ad3a82c44e943",
+  "active": "57711b0632014432",
   "lastOpenFiles": [
+    "Poemas/Lo fugaz. Ricardo Jaimes Freyre.md",
+    "Bibliografía/Poesía",
+    "Proceso/2026-06-16.md",
+    "Poemas",
+    "Ideas/202606160229.md",
+    "Proceso/2026-06-10.md",
     "Codigos/MainScene.gd1349831007.tmp",
     "Codigos/MainScene.gd1302122376.tmp",
     "Codigos/MainScene.gd997321991.tmp",
@@ -281,13 +273,9 @@
     "Codigos/MenuScene.gd.uid",
     "Codigos/MenuScene.gd",
     "Scenes/MenuScene.gd7224932120.tmp",
-    "Scenes/Scene_5.tscn",
-    "Scenes/Scene_4.tscn",
-    "Scenes/Scene_3.tscn",
     "Imagenes/Button_1.png",
     "Imagenes/Bbutton_1.png",
     "(╯°□°）abc.md",
-    "Proceso/2026-06-10.md",
     "Ideas/202606080723.md",
     "Ideas/202606030623.md",
     "Ideas/202606030648.md",

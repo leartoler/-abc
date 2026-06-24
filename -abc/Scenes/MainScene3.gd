@@ -1,8 +1,8 @@
 extends Node2D
 
 @onready var fog_mesh = $SubViewport/Node3D/MeshInstance3D
-@onready var recognizer: SpeechRecognizer = $SpeechRecognizer
-@onready var poem_display: PoemDisplay = $PoemLabel
+@onready var recognizer: SpeechRecognizer3 = $SpeechRecognizer
+@onready var poem_display: PoemDisplay3 = $PoemLabel
 @onready var instruction_label: Label = $InstructionLabel
 @onready var spoken_word_label = $SpokenWordLabel
 @onready var spoken_word_bg = $SpokenWordBg
@@ -13,7 +13,7 @@ extends Node2D
 
 #Cambiar por el numero de palabras
 var palabras_correctas := 0
-const PALABRAS_OBJETIVO := 10
+const PALABRAS_OBJETIVO := 18
 ##################333
 
 func mostrar_instruccion(texto: String):
